@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: whatsapp-marketing
+    runtime: node
+    repo: https://github.com/YOUR_USERNAME/YOUR_REPO
+    plan: free
+    buildCommand: cd backend && npm install && cd ../frontend && npm install && npm run build
+    startCommand: cd backend && node server.js
+    envVars:
+      - key: NODE_VERSION
+        value: 18
+      - key: PORT
+        value: 5000
+      - key: MONGODB_URI
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: ADMIN_EMAIL
+        value: admin@digitalsms.biz
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: CORS_ORIGIN
+        value: https://your-app-name.onrender.com
+      - key: CLEANUP_SCHEDULE
+        value: 0 3 * * *
