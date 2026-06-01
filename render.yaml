@@ -1,11 +1,11 @@
 services:
   - type: web
-    name: whatsapp-marketing
+    name: niffty
     runtime: node
-    repo: https://github.com/YOUR_USERNAME/YOUR_REPO
+    repo: https://github.com/8619747559rahulkumawat/niffty
     plan: free
-    buildCommand: cd backend && npm install && cd ../frontend && npm install && npm run build
-    startCommand: cd backend && node server.js
+    buildCommand: npm run build
+    startCommand: npm start
     envVars:
       - key: NODE_VERSION
         value: 18
@@ -20,6 +20,8 @@ services:
       - key: ADMIN_PASSWORD
         sync: false
       - key: CORS_ORIGIN
-        value: https://your-app-name.onrender.com
+        value: https://niffty.onrender.com
       - key: CLEANUP_SCHEDULE
         value: 0 3 * * *
+      - key: OPENAI_API_KEY
+        sync: false
